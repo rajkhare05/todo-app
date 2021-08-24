@@ -1,0 +1,36 @@
+body {
+    background-color: #403838;
+    color: white;
+}
+
+#tempText {
+    position: absolute;
+    background-color: rgba(65, 65, 218, 0.829);
+    color: white;
+    border: 0 solid black;
+    padding: 8px 42px;
+    left: -50px;
+    top: 24px;
+    transform: rotate(-46deg);
+}
+
+#inputBox {
+    display: inline-block;
+    width: 500px;
+    height: 25px;
+    margin-left:420px;
+}
+
+#add-btn {
+    display: inline-block;
+    width: 50px;
+    height: 31px;
+}
+
+#container {
+    margin: 50px 0 0 30px;
+}
+
+#list {
+    padding-left: 23px;
+}
