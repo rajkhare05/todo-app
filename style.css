@@ -41,6 +41,10 @@ body {
     margin: 50px 0 0 30px;
 }
 
+#container div {
+	margin-top: 10px;
+}
+
 #container div input {
     height: 20px;
     width: 20px;
@@ -49,7 +53,7 @@ body {
 #container div label {
     font-size: 24px;
     color: #5de032;
-    margin-left: 12px;
+    padding-left: 12px;
 }
 
 #container div button {

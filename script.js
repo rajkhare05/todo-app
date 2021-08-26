@@ -1,9 +1,8 @@
-let box1 = document.getElementById("inputBox");
-let add_btn = document.getElementById("add-btn");
-let container = document.getElementById("container");
-let len_para = document.getElementById("text-len");
+const box1 = document.querySelector("#inputBox");
+const add_btn = document.querySelector("#add-btn");
+const container = document.querySelector("#container");
+const len_para = document.querySelector("#text-len");
 let unique_id = 1;
-let tasks = [];
 
 // get task and write into task list
 const addTask = () => {
@@ -32,7 +31,7 @@ const addTask = () => {
         let new_task = document.createElement("label");
         new_task.setAttribute("class", sub_cls_name);
         new_task.setAttribute("onclick", "markTask(this)");
-        new_task.textContent = box1.value;
+        new_task.textContent = box1.value.trim();
 
         // remove task button
         let rem_btn = document.createElement("button");
@@ -51,30 +50,30 @@ const addTask = () => {
 
         // appending task div inside container
         container.appendChild(main_box);
-        
-        // appending task into array of tasks
-        tasks.push(box1.value);
 
         // increment task id for each new task
         ++unique_id;
-    }
+
+    } else {
+		alert("task cannot be empty");
+	}
+	
     box1.value = "";
+	len_para.textContent = 0;
 }
+
+// check and show length of the text
+box1.addEventListener('input', (event) => {
+	event.target.value = event.target.value.match(/.{0,100}/)[0];
+	let text_len = event.target.value.length;
+	len_para.textContent = text_len;
+});
 
 // add task on pressing 'Enter' key
 box1.addEventListener('keyup', (event) => {
-    if (event.key == 'Enter'){
-        addTask();
-    }
-});
-
-box1.addEventListener('input', () => {
-    let text_len = box1.value.length;
-    len_para.textContent = text_len;
-    if (text_len > 100){
-        alert("100 characters are allowed !");
-        return;
-    }
+	if (event.key == 'Enter'){
+		addTask();
+	}
 });
 
 // add task on clicking 'ADD' button
