@@ -1,4 +1,8 @@
 # ToDo App
-- Still working on basic structure (will complete it after exams)
-- :p 
+- Write your todo (s) <br>
+- Remove your todo (s)
 
+### Working On:
+- Todo sorting
+- Drag and drop todo cards
+- CSS
