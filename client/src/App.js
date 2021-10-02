@@ -1,8 +1,17 @@
 import React from 'react';
+import Home from './components/Home';
 
 function App() {
+  const style_ = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
   return (
-    <h1>App</h1>
+    <div>
+      <h1 style={style_} >ToDo App</h1>
+      <Home />
+    </div>
   );
 }
 
