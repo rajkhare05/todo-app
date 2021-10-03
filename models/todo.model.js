@@ -6,7 +6,7 @@ const toDoSchema = new mongoose.Schema({
         required: true,
         unique: false,
         trim: true,
-        minlength: 5
+        minlength: 2
     },
 }, {
     timestamps: true
