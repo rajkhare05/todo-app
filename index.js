@@ -1,7 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const path = require('path')
 const toDoMod = require('./models/todo.model')
 require('dotenv').config()
 
@@ -28,7 +27,7 @@ connection.once('open', () => {
 // get all toDo(s)
 app.get('/todos', async (req, res) => {
     try {
-        const toDoList = await toDoMod.find()
+        const toDoList = await toDoMod.find().sort({createdAt: -1})
         res.json(toDoList)
         
     } catch (err) {
